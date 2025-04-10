@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio Rizzie</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 40px;
+        text-align: center;
+        background: #f4f4f4;
+      }
+      #slider {
+        width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease-in-out;
+      }
+    </style>
   </head>
-  <body style="font-family:sans-serif; padding:40px; text-align:center;">
+  <body>
     <h1>Selamat Datang di Website Portofolio Rizzie</h1>
     <p>Halo! Saya Muhammad Rizzie Al Ghofari, selamat datang di website portofolio saya.</p>
 
-    <img src="1.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="2.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="3.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="4.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="5.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="6.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="7.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="8.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="9.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="10.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="11.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="12.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="13.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <img src="14.jpg" alt="Foto Rizzie" width="300" style="border-radius:12px;" />
-    <a href="/about">About Me</a>
+    <img id="slider" src="1.jpg" alt="Foto Rizzie" />
+
+    <script>
+      let current = 1;
+      const total = 14;
+      setInterval(() => {
+        current++;
+        if (current > total) current = 1;
+        document.getElementById("slider").src = current + ".jpg";
+      }, 2000);
+    </script>
   </body>
 </html>
