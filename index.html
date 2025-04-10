@@ -15,7 +15,8 @@
         width: 300px;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: all 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
       }
     </style>
   </head>
@@ -28,11 +29,18 @@
     <script>
       let current = 1;
       const total = 14;
+      const slider = document.getElementById("slider");
+
       setInterval(() => {
-        current++;
-        if (current > total) current = 1;
-        document.getElementById("slider").src = current + ".jpg";
-      }, 2000);
+        slider.style.opacity = 0; // hilangkan dulu
+
+        setTimeout(() => {
+          current++;
+          if (current > total) current = 1;
+          slider.src = current + ".jpg";
+          slider.style.opacity = 1; // munculkan kembali
+        }, 500); // waktu fade out
+      }, 3000); // ganti gambar setiap 3 detik
     </script>
   </body>
 </html>
