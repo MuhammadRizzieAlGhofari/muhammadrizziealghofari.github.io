@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portofolio Rizzie</title>
   <style>
     body {
@@ -17,16 +17,15 @@
       justify-content: center;
       gap: 10px;
     }
-    .image-gallery img {
+    .fade-in {
       width: 200px;
       border-radius: 12px;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
     }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -39,22 +38,22 @@
   <script>
     let current = 1;
     const total = 14;
-
     const gallery = document.getElementById('gallery');
 
-    const showNextImage = () => {
+    function showNextImage() {
       const img = document.createElement('img');
       img.src = `${current}.jpg`;
       img.alt = `Foto Rizzie ${current}`;
+      img.className = 'fade-in';
       gallery.appendChild(img);
 
       current++;
       if (current <= total) {
-        setTimeout(showNextImage, 1500); // jeda antar gambar
+        setTimeout(showNextImage, 1500);
       }
-    };
+    }
 
-    showNextImage(); // mulai slideshow
+    showNextImage();
   </script>
 </body>
 </html>
